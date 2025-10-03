@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,16 +92,24 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'expenseapp',
-        'USER': 'expenseapp_7f25_user',
-        'PASSWORD': 'VdtU73sYdXAS579RcAlslPfeD2vm2NNU',
-        'HOST': 'dpg-d3f9599r0fns73ddj1f0-a.postgres.render.com',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://postgres:Murugi01@localhost:5432/expensetracker',        
+        conn_max_age=600,
+        ssl_require=False 
+    )
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'expensetracker',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Murugi01',
+#         'HOST': 'localhost',
+#         'PORT': '5433',
+#     }
+# }
 
 STATIC_URL = '/static/'
 
