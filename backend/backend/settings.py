@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-+xlekyw90h0w7ift+9z93evwgpw$5^+$d9ep=9fyff2k0tcyab
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["expensetracker-1-rz0p.onrender.com", "localhost", "127.0.0.1", ]
+ALLOWED_HOSTS = ["expensetracker-7-sujg.onrender.com", "localhost", "127.0.0.1", ]
 
 
 # Application definition
@@ -92,6 +92,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASE_URL = os.getenv("DATABASE_URL_LOCAL") or os.getenv("DATABASE_URL")
+
 
 if DATABASE_URL:
     DATABASES = {
